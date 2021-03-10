@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
+import { NavLink } from "react-router-dom";
 
 import * as S from "./styles";
 
@@ -16,14 +17,14 @@ const Home = () => {
   return (
     <S.Container>
       <p>Edit src/App.tsx and save to reload.</p>
-      <a
+      <NavLink
         className="App-link"
-        href="/login"
+        to="/login"
         target="_blank"
         rel="noopener noreferrer"
       >
         Login
-      </a>
+      </NavLink>
     </S.Container>
   );
 };

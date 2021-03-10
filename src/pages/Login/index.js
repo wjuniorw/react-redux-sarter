@@ -18,7 +18,9 @@ const Login = () => {
   };
   const pass = useRef();
   const submitInput = e => {
-    console.log(e);
+    if (e.key === "Enter") {
+      pass.current.focus();
+    }
   };
 
   return (
@@ -35,6 +37,7 @@ const Login = () => {
           type="text"
           name="email"
           value={email}
+          onKeyPress={e => submitInput(e)}
           onChange={({ target }) => setEmail(target.value)}
         />
         <InputLarge
@@ -42,8 +45,7 @@ const Login = () => {
           type="password"
           name="senha"
           value={senha}
-          ref={pass}
-          onKeyPress={e => submitInput(e)}
+          passref={pass}
           onChange={({ target }) => setSenha(target.value)}
         />
         <Button onClick={() => login()} text="Login" />
