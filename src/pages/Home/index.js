@@ -17,12 +17,7 @@ const Home = () => {
   return (
     <S.Container>
       <p>Edit src/App.tsx and save to reload.</p>
-      <NavLink
-        className="App-link"
-        to="/login"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      <NavLink className="App-link" to="/login" rel="noopener noreferrer">
         Login
       </NavLink>
     </S.Container>
