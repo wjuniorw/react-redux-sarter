@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const InputLarge = styled.div`
   width: 100%;
@@ -12,6 +12,7 @@ export const InputLarge = styled.div`
     height: 60px;
     border: none;
     color: #333333;
+    // display: block;
     font-size: 18px;
     padding: 0 20px;
     line-height: 1.2;
@@ -38,7 +39,7 @@ export const InputLarge = styled.div`
     transition: all 0.4s;
     width: calc(100% + 2px);
     height: calc(100% + 2px);
-    border: 1px solid ${({ color }) => (color ? color : "#22bed9")};
+    border: 1px solid ${({ color }) => (color ? color : '#22bed9')};
     transform: scaleX(1.1) scaleY(1.3);
   }
-`;
+`

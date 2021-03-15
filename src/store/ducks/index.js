@@ -1,14 +1,16 @@
-import { combineReducers } from "redux";
-import { resettableReducer } from "reduxsauce";
+import { combineReducers } from 'redux'
+import { resettableReducer } from 'reduxsauce'
 
-import user from "./user";
-import loader from "./loader";
+import user from './user'
+import loader from './loader'
+import session from './session'
 
-const resettableUser = resettableReducer("LOGOUT");
+const resettableUser = resettableReducer('LOGOUT')
 
 const reducers = combineReducers({
   loader,
-  user: resettableUser(user)
-});
+  session,
+  user: resettableUser(user),
+})
 
-export default reducers;
+export default reducers

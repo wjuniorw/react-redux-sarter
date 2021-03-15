@@ -1,30 +1,41 @@
-import React, { useState, useRef } from "react";
-import { useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
+import React, { useState, useRef, useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 
-import { Creators } from "../../store/ducks/user";
-const { userLogin } = Creators;
+import { useHistory } from 'react-router-dom'
 
-import * as S from "./styles";
+import { Creators } from '../../store/ducks/user'
+const { userLogin } = Creators
 
-import { Button, InputLarge } from "../../components/atoms";
+import * as S from './styles'
+import colors from '../../global/colors'
+
+import { Button, InputLarge } from '../../components/atoms'
 
 const Login = () => {
-  const dispatch = useDispatch();
-  const history = useHistory();
+  const dispatch = useDispatch()
+  const { error } = useSelector(state => state.session)
+  const history = useHistory()
 
-  const [email, setEmail] = useState("");
-  const [senha, setSenha] = useState("");
+  const [email, setEmail] = useState('')
+  const [senha, setSenha] = useState('')
+  const [color, setColor] = useState('#22bad9')
 
   const login = () => {
-    dispatch(userLogin({ email, senha, nav: history }));
-  };
-  const pass = useRef();
+    dispatch(userLogin({ email, senha, nav: history }))
+  }
+
+  const pass = useRef()
   const submitInput = e => {
-    if (e.key === "Enter") {
-      pass.current.focus();
+    if (e.key === 'Enter') {
+      pass.current.focus()
     }
-  };
+  }
+
+  useEffect(() => {
+    console.log('errror', error)
+    const color = error ? colors.error : colors.blue
+    setColor(color)
+  }, [error])
 
   return (
     <S.Container>
@@ -40,6 +51,7 @@ const Login = () => {
           type="text"
           name="email"
           value={email}
+          color={color}
           onKeyPress={e => submitInput(e)}
           onChange={({ target }) => setEmail(target.value)}
         />
@@ -48,13 +60,14 @@ const Login = () => {
           type="password"
           name="senha"
           value={senha}
+          color={color}
           inputref={pass}
           onChange={({ target }) => setSenha(target.value)}
         />
         <Button onClick={() => login()} text="Login" />
       </S.Content>
     </S.Container>
-  );
-};
+  )
+}
 
-export default Login;
+export default Login
