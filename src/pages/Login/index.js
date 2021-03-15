@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 
 import { Creators } from "../../store/ducks/user";
 const { userLogin } = Creators;
@@ -10,11 +11,13 @@ import { Button, InputLarge } from "../../components/atoms";
 
 const Login = () => {
   const dispatch = useDispatch();
+  const history = useHistory();
+
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
 
   const login = () => {
-    dispatch(userLogin({ email, senha }));
+    dispatch(userLogin({ email, senha, nav: history }));
   };
   const pass = useRef();
   const submitInput = e => {
@@ -45,7 +48,7 @@ const Login = () => {
           type="password"
           name="senha"
           value={senha}
-          passref={pass}
+          inputref={pass}
           onChange={({ target }) => setSenha(target.value)}
         />
         <Button onClick={() => login()} text="Login" />

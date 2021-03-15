@@ -2,10 +2,12 @@ import { call, put, select, take } from "redux-saga/effects";
 import { Types } from "../ducks/user";
 import { login as tryLogin } from "./apiCalls";
 
-export function* login({ params }) {
+export function* login({ params: { nav, ...params } }) {
   try {
     console.log("saga login ===>", params);
+    yield call(nav.push, "/dash");
     const { data: resp } = yield call(tryLogin, params);
+    console.log("resp login===>", resp);
     const { token, refreshToken, ...user } = resp;
     const res = { ...user, token, refreshToken };
     yield call(localStorage.setItem, "App@User", JSON.stringify(user));
@@ -13,9 +15,10 @@ export function* login({ params }) {
     yield call(localStorage.setItem, "App@refreshToken", refreshToken);
 
     yield put({ type: Types.LOGIN_SUCESS, data: res });
-    // yield put({ type: 'LOG_IN' })
-  } catch (err) {
-    console.log("error login ===>", err.message);
+    yield put({ type: "LOG_IN" });
+  }
+  catch (err) {
+    console.log("error login saga ===>", err.message);
     if (!err.response) alert("Falha na requisicão...");
     if (err.response) {
       const {
@@ -29,7 +32,7 @@ export function* login({ params }) {
 export function* loadUser() {
   yield take("LOAD_USER");
   try {
-    const user = yield localStorage.getItem("App@User");
+    const user = yield call(localStorage.getItem, "App@User");
     if (!!user) {
       const data = yield JSON.parse(user);
       console.log("user loaded ========>", data);

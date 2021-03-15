@@ -12,7 +12,6 @@ export const InputLarge = styled.div`
     height: 60px;
     border: none;
     color: #333333;
-    display: block;
     font-size: 18px;
     padding: 0 20px;
     line-height: 1.2;
