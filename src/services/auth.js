@@ -16,7 +16,7 @@ const login = user => {
 
 const AuthModule = {
   // login: user => Api.post("/login", user),
-  login: login,
+  login,
   signup: () => null,
   getToken: () => null,
   refreshToken: () => null
