@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 // export const Container = styled.button`
 //   padding: 0 16px;
@@ -23,10 +23,10 @@ export const Container = styled.button`
   border: none;
   outline: none !important;
   :hover {
-    content: "";
+    content: '';
     display: block;
     border-radius: 10px;
     transition: all 2s;
-    background: linear-gradient(45deg, #00dbde, #22bed9);
+    background: linear-gradient(45deg, #0099ff, #22bed9);
   }
-`;
+`
