@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const Container = styled.div`
   width: 100%;
@@ -8,7 +8,7 @@ export const Container = styled.div`
   justify-content: center;
   background-color: #3ca5e7;
   background: linear-gradient(35deg, #3ca5e7, #22bed9);
-`;
+`
 
 export const Content = styled.div`
   width: 60vh;
@@ -19,18 +19,13 @@ export const Content = styled.div`
   border-radius: 10px;
   flex-direction: column;
   justify-content: space-around;
-  // @media (max-width: 768px) {
-  //   justify-content: space-around;
-  // }
-  @media (max-width: 576px) {
-    margin: 10px;
-    padding-left: 15px;
-    padding-right: 15px;
-  }
+  margin: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
   div {
     width: 100%;
   }
-`;
+`
 
 export const Logo = styled.div`
   display: flex;
@@ -39,10 +34,10 @@ export const Logo = styled.div`
   img {
     border-style: none;
     vertical-align: middle;
-    width: ${({ size }) => (size ? size : "70%")};
+    width: ${({ size }) => (size ? size : '70%')};
   }
-`;
+`
 
 export const Input = styled.input`
   height: 50px;
-`;
+`
