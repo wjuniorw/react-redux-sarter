@@ -6,10 +6,11 @@ import loader from './loader'
 import session from './session'
 
 const resettableUser = resettableReducer('LOGOUT')
+const resetSession = resettableReducer('LOGOUT')
 
 const reducers = combineReducers({
   loader,
-  session,
+  session: resetSession(session),
   user: resettableUser(user),
 })
 
