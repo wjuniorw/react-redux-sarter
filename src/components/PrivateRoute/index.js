@@ -1,6 +1,6 @@
-import React from "react";
-import { Route, Redirect } from "react-router-dom";
-import { isLogedIn } from "../../services/verifyToken";
+import React from 'react'
+import { Route, Redirect } from 'react-router-dom'
+import { isLogedIn } from '../../services/verifyToken'
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route
@@ -11,13 +11,13 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
       ) : (
         <Redirect
           to={{
-            pathname: "/login",
-            state: { from: props.location }
+            pathname: '/login',
+            state: { from: props.location },
           }}
         />
       )
     }
   />
-);
+)
 
-export default PrivateRoute;
+export default PrivateRoute

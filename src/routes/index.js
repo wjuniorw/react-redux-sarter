@@ -1,11 +1,11 @@
-import React from "react";
-import { BrowserRouter, Route, Redirect } from "react-router-dom";
+import React from 'react'
+import { BrowserRouter, Route, Redirect } from 'react-router-dom'
 
-import Home from "../pages/Home";
-import Login from "../pages/Login";
-import Dashboard from "../pages/Dashboard";
+import Home from '../pages/Home'
+import Login from '../pages/Login'
+import Dashboard from '../pages/Dashboard'
 
-import PrivateRoute from "../components/PrivateRoute";
+import PrivateRoute from '../components/PrivateRoute'
 
 const Routes = () => (
   <BrowserRouter>
@@ -13,6 +13,6 @@ const Routes = () => (
     <Route path="/login" exact component={Login} />
     <PrivateRoute path="/dash" exact component={Dashboard} />
   </BrowserRouter>
-);
+)
 
-export default Routes;
+export default Routes

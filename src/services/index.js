@@ -1,7 +1,7 @@
-import Auth from "./auth";
+import Auth from './auth'
 
 const AppApi = {
-  ...Auth
-};
+  ...Auth,
+}
 
-export default AppApi;
+export default AppApi

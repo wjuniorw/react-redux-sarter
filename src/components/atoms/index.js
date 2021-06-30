@@ -1,4 +1,4 @@
-import Button from "./Button";
-import InputLarge from "./InputLarge";
+import Button from './Button'
+import InputLarge from './InputLarge'
 
-export { Button, InputLarge };
+export { Button, InputLarge }

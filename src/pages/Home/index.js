@@ -1,18 +1,18 @@
-import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { NavLink } from "react-router-dom";
+import React, { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
+import { NavLink } from 'react-router-dom'
 
-import * as S from "./styles";
+import * as S from './styles'
 
-import { Creators } from "../../store/ducks/user";
-const { loadUser } = Creators;
+import { Creators } from '../../store/ducks/user'
+const { loadUser } = Creators
 
 const Home = () => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
 
   useEffect(() => {
-    dispatch(loadUser());
-  }, []);
+    dispatch(loadUser())
+  }, [])
 
   return (
     <S.Container>
@@ -21,7 +21,7 @@ const Home = () => {
         Login
       </NavLink>
     </S.Container>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

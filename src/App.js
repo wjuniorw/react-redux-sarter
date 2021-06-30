@@ -1,14 +1,14 @@
-import React from "react";
-import { Provider } from "react-redux";
-import Routes from "./routes";
-import GlobalStyles from "./global/styles.global";
+import React from 'react'
+import { Provider } from 'react-redux'
+import Routes from './routes'
+import GlobalStyles from './global/styles.global'
 
-import store from "./store";
+import store from './store'
 const App = () => (
   <Provider store={store}>
     <GlobalStyles />
     <Routes />
   </Provider>
-);
+)
 
-export default App;
+export default App

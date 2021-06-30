@@ -1,3 +1,3 @@
-import Api from "../../services";
+import Api from '../../services'
 
-export const login = user => Api.login(user);
+export const login = user => Api.login(user)
